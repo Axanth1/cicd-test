@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 
 WORKDIR /app
+COPY index.html .
 
-COPY test.txt .
-COPY test.py .
+EXPOSE 80
 
-CMD ["python", "test.py"]
+CMD ["python", "-m", "http.server", "80"]
